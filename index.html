@@ -49,7 +49,7 @@
   islazyload: true,
   isAnchor: false,
   shortcutKey: undefined,
-  autoDarkmode: true
+  autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   configTitle: '小奥のblog',
   title: '小奥のblog',
@@ -59,7 +59,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-10-31 10:51:34',
+  postUpdate: '2024-10-31 11:09:26',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -151,26 +151,11 @@
       }
       const t = saveToLocal.get('theme')
     
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 8 || hour >= 8
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
           else activateDarkMode()
         
       const asideStatus = saveToLocal.get('aside-status')
@@ -354,7 +339,7 @@ document.addEventListener('pjax:success', initializeDragImage);</script><div id=
         我的世界
       </a>
     </div>
-    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/posts/7bcddba4.html')"><div class="post_cover left"><a href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://tuchuang.aokaoka.top/file/1730123892403_Image_8586990713792.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笙竹小镇[mc互通服]" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">我的世界</div><span class="newPost">最新</span><a class="unvisited-post" href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]">未读</a></div><a class="article-title" href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]">笙竹小镇[mc互通服]</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-06T04:08:51.000Z" title="发表于 2024-10-06 04:08:51" time="2024-10-06 04:08:51">2024-10-06</time><time class="time_hidden" datetime="2024-10-31T10:51:21.051Z" title="更新于 2024-10-31 10:51:21" time="2024-10-31 10:51:21">2024-10-31</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/MC%E6%9C%8D%E5%8A%A1%E5%99%A8/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>MC服务器</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a class="twikoo-count" href="/posts/7bcddba4.html#post-comment" tabindex="-1"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">—-🚀️服务器介绍——这里，生电玩法激发红石创意！
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/posts/7bcddba4.html')"><div class="post_cover left"><a href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://tuchuang.aokaoka.top/file/1730123892403_Image_8586990713792.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笙竹小镇[mc互通服]" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">我的世界</div><span class="newPost">最新</span><a class="unvisited-post" href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]">未读</a></div><a class="article-title" href="/posts/7bcddba4.html" title="笙竹小镇[mc互通服]">笙竹小镇[mc互通服]</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-06T04:08:51.000Z" title="发表于 2024-10-06 04:08:51" time="2024-10-06 04:08:51">2024-10-06</time><time class="time_hidden" datetime="2024-10-31T11:09:11.137Z" title="更新于 2024-10-31 11:09:11" time="2024-10-31 11:09:11">2024-10-31</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/MC%E6%9C%8D%E5%8A%A1%E5%99%A8/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>MC服务器</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a class="twikoo-count" href="/posts/7bcddba4.html#post-comment" tabindex="-1"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">—-🚀️服务器介绍——这里，生电玩法激发红石创意！
 非商业化运作，只为热爱！
 休闲氛围，让你轻松游戏无压力！
 双版本互通，打破限制，与伙伴畅玩mc！
