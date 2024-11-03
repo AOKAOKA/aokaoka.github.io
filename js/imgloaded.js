@@ -1,18 +1,17 @@
-// 首页一图流加载优化
+// 首页头图加载优化
 /**
  * @description 实现medium的渐进加载背景的效果
  */
-(function() {
-  class ProgressiveLoad {
+class ProgressiveLoad {
     constructor(smallSrc, largeSrc) {
       this.smallSrc = smallSrc;
       this.largeSrc = largeSrc;
       this.initTpl();
-      this.container.addEventListener('animationend', () => {
-        this.smallStage.style.display = 'none'; 
-      }, {once: true});
     }
-
+  
+    /**
+     * @description 生成ui模板
+     */
     initTpl() {
       this.container = document.createElement('div');
       this.smallStage = document.createElement('div');
@@ -27,23 +26,32 @@
       this.smallImg.onload = this._onSmallLoaded.bind(this);
       this.largeImg.onload = this._onLargeLoaded.bind(this);
     }
-
+  
+    /**
+     * @description 加载背景
+     */
     progressiveLoad() {
       this.smallImg.src = this.smallSrc;
       this.largeImg.src = this.largeSrc;
     }
-
+  
+    /**
+     * @description 大图加载完成
+     */
     _onLargeLoaded() {
       this.largeStage.classList.add('pl-visible');
       this.largeStage.style.backgroundImage = `url('${this.largeSrc}')`;
     }
-
+  
+    /**
+     * @description 小图加载完成
+     */
     _onSmallLoaded() {
       this.smallStage.classList.add('pl-visible');
       this.smallStage.style.backgroundImage = `url('${this.smallSrc}')`;
     }
   }
-
+  
   const executeLoad = (config, target) => {
     console.log('执行渐进背景替换');
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
@@ -51,74 +59,28 @@
       isMobile ? config.mobileSmallSrc : config.smallSrc,
       isMobile ? config.mobileLargeSrc : config.largeSrc
     );
+    // 和背景图颜色保持一致，防止高斯模糊后差异较大
     if (target.children[0]) {
       target.insertBefore(loader.container, target.children[0]);
     }
     loader.progressiveLoad();
   };
-
-  const ldconfig = {
-    light: {
-	  smallSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端浅色大图链接 最终显示的图片
-	  enableRoutes: ['/'],
-	  },
-	dark: {
-	  smallSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //深色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端深色大图链接 最终显示的图片
-	  enableRoutes: ['/'],
-	  },
-	};
-
-    const getCurrentTheme = () => {
-      return document.documentElement.getAttribute('data-theme'); 
-    }
-
-    const onThemeChange = () => {
-      const currentTheme = getCurrentTheme();
-      const config = ldconfig[currentTheme];
-      initProgressiveLoad(config);
-      document.addEventListener("DOMContentLoaded", function() {
-        initProgressiveLoad(config);
-      });
-    
-      document.addEventListener("pjax:complete", function() {
-        onPJAXComplete(config);
-      });
-    }
-
-    let initTheme = getCurrentTheme();
-    let initConfig = ldconfig[initTheme];
-    initProgressiveLoad(initConfig);
-
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (mutation.attributeName === "data-theme" && location.pathname === '/') {
-        onThemeChange();
-      }
-    });
-  });
   
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["data-theme"]  
-  });
+  const config = {
+    smallSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', // 小图链接 尽可能配置小于100k的图片
+    largeSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', // 大图链接 最终显示的图片
+    mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', // 手机端小图链接 尽可能配置小于100k的图片
+    mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', // 手机端大图链接 最终显示的图片
+    enableRoutes: ['/'],
+    };
 
   function initProgressiveLoad(config) {
-    const container = document.querySelector('.pl-container');
-    if (container) {
-      container.remove();
-    }
     const target = document.getElementById('page-header');
     if (target && target.classList.contains('full_page')) {
       executeLoad(config, target);
     }
   }
-
+  
   function onPJAXComplete(config) {
     const target = document.getElementById('page-header');
     if (target && target.classList.contains('full_page')) {
@@ -126,4 +88,11 @@
     }
   }
 
-})();
+  document.addEventListener("DOMContentLoaded", function() {
+    initProgressiveLoad(config);
+  });
+  
+  document.addEventListener("pjax:complete", function() {
+    onPJAXComplete(config);
+  });
+  
