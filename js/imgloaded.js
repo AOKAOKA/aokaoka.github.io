@@ -59,10 +59,10 @@
 
   const ldconfig = {
     light: {
-	  smallSrc: '/img/bg2_80kbver.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: '/img/bg2.jpg', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: '/img/bg2_80kbver.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: '/img/bg2.jpg', //手机端浅色大图链接 最终显示的图片
+	  smallSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //浅色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
@@ -127,9 +127,3 @@
   }
 
 })();
-
-
-作者: Bornforthis
-链接: https://blog.bornforthis.cn/posts/cf45a15f.html#2-1-%E9%A6%96%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%9B%BE%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%8A%A0%E8%BD%BD
-来源: 别碰我的镜头盖
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
