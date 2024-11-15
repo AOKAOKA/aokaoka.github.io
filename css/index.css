@@ -10575,12 +10575,6 @@ h1.page-title + .tag-cloud-list {
 #post-comment.move .comment-wrap > div:last-child {
   display: block;
 }
-body {
-  cursor: url("https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071208706.cur"), auto;
-}
-a {
-  cursor: url("https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071205091.cur"), auto !important;
-}
 #footer {
   position: relative;
   background: -webkit-linear-gradient(270deg, var(--anzhiyu-card-bg-none) 0%, var(--anzhiyu-card-bg) 25%);
