@@ -59,17 +59,17 @@
 
   const ldconfig = {
     light: {
-	  smallSrc: 'https://tuchuang.aokaoka.top/file/1732152444373_67399d6ae2955.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'https://tuchuang.aokaoka.top/file/1732152444373_67399d6ae2955.jpg', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1732152444373_67399d6ae2955.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1732152444373_67399d6ae2955.jpg', //手机端浅色大图链接 最终显示的图片
+	  smallSrc: 'https://tuchuang.aokaoka.top/file/1732257852602_1-2.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: 'https://tuchuang.aokaoka.top/file/1732257549188_1000024053.jpg', //浅色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1732257849182_1-1.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1732257552523_1000024052.jpg', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
-	  smallSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'https://tuchuang.aokaoka.top/file/1730250656831_67149111ac455.jpg', //深色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1730250661306_67149111a59a0.jpg', //手机端深色大图链接 最终显示的图片
+	  smallSrc: 'https://tuchuang.aokaoka.top/file/1732257854664_2-2.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: 'https://tuchuang.aokaoka.top/file/1732257564143_1000024055.jpg', //深色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1732257853807_2-1.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1732257567822_1000024054.jpg', //手机端深色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	};
