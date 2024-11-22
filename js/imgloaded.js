@@ -59,10 +59,10 @@
 
   const ldconfig = {
     light: {
-	  smallSrc: 'https://tuchuang.aokaoka.top/file/1732257852602_1-2.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'https://tuchuang.aokaoka.top/file/1732257549188_1000024053.jpg', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1732257849182_1-1.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1732257552523_1000024052.jpg', //手机端浅色大图链接 最终显示的图片
+	  smallSrc: 'https://tuchuang.aokaoka.top/file/1732259332273_3-2.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: 'https://tuchuang.aokaoka.top/file/1732259075648_1000024079.jpg', //浅色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1732259334888_3-1.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1732259083641_1000024078.jpg', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
