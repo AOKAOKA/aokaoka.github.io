@@ -5,6 +5,6 @@
 }
 
 #game-card-widget img {
-  max-width: 80%;  
+  max-width: auto;  
   height: auto;   
 }
