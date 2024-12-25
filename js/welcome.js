@@ -1,5 +1,5 @@
 window.IP_CONFIG = {
-	API_KEY: 'BRHBZ-A5GC4-GGSU5-FUZIG-AJWAH-QFB2Y', // API密钥 申请地址：https://api.nsmao.net/
+	API_KEY: 'd9dl7H3NzOwR0hO7Pz3PtyB2W5', // API密钥 申请地址：https://api.nsmao.net/
 	BLOG_LOCATION: {
 		lng: 110.722, // 经度
 		lat: 19.5629 // 纬度
