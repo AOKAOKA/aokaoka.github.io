@@ -61,8 +61,8 @@
     light: {
 	  smallSrc: 'https://tuchuang.aokaoka.top/file/1735835783014_1000241467.png', //浅色模式 小图链接 尽可能配置小于100k的图片 
 	  largeSrc: 'https://tuchuang.aokaoka.top/file/1735835783014_1000241467.png', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1735835783014_1000241467.png', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1735835783014_1000241467.png', //手机端浅色大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://tuchuang.aokaoka.top/file/1735835833616_1000241477.png', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://tuchuang.aokaoka.top/file/1735835833616_1000241477.png', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
