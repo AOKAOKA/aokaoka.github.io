@@ -3,60 +3,49 @@ const CountdownTimer = (() => {
         targetDate: "2025-01-29",
         targetName: "春节",
         units: {
-            day: { text: "今日", divider: 1, unit: "小时" },
-            week: { text: "本周", divider: 24, unit: "天" },
-            month: { text: "本月", divider: 24, unit: "天" },
-            year: { text: "本年", divider: 24, unit: "天" }
+            day: { text: "今日", unit: "小时" },
+            week: { text: "本周", unit: "天" },
+            month: { text: "本月", unit: "天" },
+            year: { text: "本年", unit: "天" }
         }
     };
 
-    function getTimeUnit(unit) {
-        const now = new Date();
-        const start = new Date(now.setHours(0, 0, 0, 0));
-        const end = new Date(now.setHours(23, 59, 59, 999));
-        
-        if (unit === 'day') {
-            const currentHour = new Date().getHours();
-            const remaining = 24 - currentHour;
-            const percentage = (currentHour / 24) * 100;
-            
+    const calculators = {
+        day: () => {
+            const hours = new Date().getHours();
             return {
-                name: config.units[unit].text,
-                remaining: remaining,
-                percentage: percentage.toFixed(2),
-                unit: config.units[unit].unit
+                remaining: 24 - hours,
+                percentage: (hours / 24) * 100
+            };
+        },
+        week: () => {
+            const day = new Date().getDay();
+            const passed = day === 0 ? 6 : day - 1;
+            return {
+                remaining: 6 - passed,
+                percentage: ((passed + 1) / 7) * 100
+            };
+        },
+        month: () => {
+            const now = new Date();
+            const total = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            const passed = now.getDate() - 1;
+            return {
+                remaining: total - passed,
+                percentage: (passed / total) * 100
+            };
+        },
+        year: () => {
+            const now = new Date();
+            const start = new Date(now.getFullYear(), 0, 1);
+            const total = 365 + (now.getFullYear() % 4 === 0 ? 1 : 0);
+            const passed = Math.floor((now - start) / 86400000);
+            return {
+                remaining: total - passed,
+                percentage: (passed / total) * 100
             };
         }
-
-        const ranges = {
-            week: () => {
-                const currentDay = start.getDay();
-                const mondayOffset = currentDay === 0 ? -6 : 1 - currentDay;
-                start.setDate(start.getDate() + mondayOffset);
-                end.setDate(start.getDate() + 6);
-            },
-            month: () => {
-                start.setDate(1);
-                end.setMonth(end.getMonth() + 1, 0);
-            },
-            year: () => {
-                start.setMonth(0, 1);
-                end.setMonth(11, 31);
-            }
-        };
-        ranges[unit]?.();
-
-        const total = unit === "day" ? 24 : Math.floor((end - start) / 86400000) + 1;
-        const passed = Math.floor((now - start) / (3600000 * config.units[unit].divider));
-        const percentage = (passed / total) * 100;
-
-        return {
-            name: config.units[unit].text,
-            remaining: total - passed,
-            percentage: percentage.toFixed(2),
-            unit: config.units[unit].unit
-        };
-    }
+    };
 
     function updateCountdown() {
         const elements = ['eventName', 'eventDate', 'daysUntil', 'countRight']
@@ -65,25 +54,29 @@ const CountdownTimer = (() => {
         if (elements.some(el => !el)) return;
         
         const [eventName, eventDate, daysUntil, countRight] = elements;
-        const timeData = Object.keys(config.units).reduce((acc, unit) => ({...acc, [unit]: getTimeUnit(unit)}), {});
-        const daysRemaining = Math.round((new Date(config.targetDate) - new Date().setHours(0,0,0,0)) / 86400000);
-
+        const now = new Date();
+        const target = new Date(config.targetDate);
+        
         eventName.textContent = config.targetName;
         eventDate.textContent = config.targetDate;
-        daysUntil.textContent = daysRemaining;
-        countRight.innerHTML = Object.entries(timeData)
-            .map(([_, item]) => `
-                <div class="cd-count-item">
-                    <div class="cd-item-name">${item.name}</div>
-                    <div class="cd-item-progress">
-                        <div class="cd-progress-bar" style="width: ${item.percentage}%; opacity: ${item.percentage/100}"></div>
-                        <span class="cd-percentage ${item.percentage >= 46 ? 'cd-many' : ''}">${item.percentage}%</span>
-                        <span class="cd-remaining ${item.percentage >= 60 ? 'cd-many' : ''}">
-                            <span class="cd-tip">还剩</span>${item.remaining}<span class="cd-tip">${item.unit}</span>
-                        </span>
+        daysUntil.textContent = Math.round((target - now.setHours(0,0,0,0)) / 86400000);
+        
+        countRight.innerHTML = Object.entries(config.units)
+            .map(([key, {text, unit}]) => {
+                const {remaining, percentage} = calculators[key]();
+                return `
+                    <div class="cd-count-item">
+                        <div class="cd-item-name">${text}</div>
+                        <div class="cd-item-progress">
+                            <div class="cd-progress-bar" style="width: ${percentage}%; opacity: ${percentage/100}"></div>
+                            <span class="cd-percentage ${percentage >= 46 ? 'cd-many' : ''}">${percentage.toFixed(2)}%</span>
+                            <span class="cd-remaining ${percentage >= 60 ? 'cd-many' : ''}">
+                                <span class="cd-tip">还剩</span>${remaining}<span class="cd-tip">${unit}</span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
     }
 
     function injectStyles() {
