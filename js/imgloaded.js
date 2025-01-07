@@ -66,10 +66,10 @@
 	  enableRoutes: ['/'],
 	  },
 	dark: {
-	  smallSrc: 'img/67149111ac455.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'img/67149111ac455.jpg', //深色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'img/67149111a59a0.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'img/67149111a59a0.jpg', //手机端深色大图链接 最终显示的图片
+	  smallSrc: '/img/67149111ac455.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: '/img/67149111ac455.jpg', //深色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: '/img/67149111a59a0.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: '/img/67149111a59a0.jpg', //手机端深色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	};
