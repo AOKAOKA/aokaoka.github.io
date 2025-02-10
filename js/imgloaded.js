@@ -59,17 +59,17 @@
 
   const ldconfig = {
     light: {
-	  smallSrc: 'img/Image-05-09-22.png', //浅色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: 'img/Image-05-09-22.png', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: 'img/1000241477.png', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: 'img/1000241477.png', //手机端浅色大图链接 最终显示的图片
+	  smallSrc: '/img/首页.png', //浅色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: '/img/首页.png', //浅色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: '/img/手机端壁纸.png', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: '/img/手机端壁纸.png', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
-	  smallSrc: '/img/67149111ac455.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: '/img/67149111ac455.jpg', //深色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: '/img/67149111a59a0.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: '/img/67149111a59a0.jpg', //手机端深色大图链接 最终显示的图片
+	  smallSrc: '/img/PC端深色壁纸.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: '/img/PC端深色壁纸.jpg', //深色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: '/img/手机端深色壁纸.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: '/img/手机端深色壁纸.jpg', //手机端深色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	};
