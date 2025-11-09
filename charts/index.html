@@ -59,7 +59,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-11-09 03:17:20',
+  postUpdate: '2025-11-09 03:18:23',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
             color: color
           }
         },
-        data: ["Hexo","Tag Plugins","cloudflare","CDN","HTML","CSS","我的世界","服务器"]
+        data: ["Hexo","cloudflare","CDN","Tag Plugins","HTML","CSS","我的世界","服务器"]
       },
       yAxis: {
         name: '文章篇数',
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
       series: [{
         name: '文章篇数',
         type: 'bar',
-        data: [{"name":"Hexo","value":2,"path":"tags/Hexo/"},{"name":"Tag Plugins","value":1,"path":"tags/Tag-Plugins/"},{"name":"cloudflare","value":1,"path":"tags/cloudflare/"},{"name":"CDN","value":1,"path":"tags/CDN/"},{"name":"HTML","value":1,"path":"tags/HTML/"},{"name":"CSS","value":1,"path":"tags/CSS/"},{"name":"我的世界","value":1,"path":"tags/我的世界/"},{"name":"服务器","value":1,"path":"tags/服务器/"}],
+        data: [{"name":"Hexo","value":2,"path":"tags/Hexo/"},{"name":"cloudflare","value":1,"path":"tags/cloudflare/"},{"name":"CDN","value":1,"path":"tags/CDN/"},{"name":"Tag Plugins","value":1,"path":"tags/Tag-Plugins/"},{"name":"HTML","value":1,"path":"tags/HTML/"},{"name":"CSS","value":1,"path":"tags/CSS/"},{"name":"我的世界","value":1,"path":"tags/我的世界/"},{"name":"服务器","value":1,"path":"tags/服务器/"}],
         itemStyle: {
           borderRadius: [5, 5, 0, 0],
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
         radius: ['15%', '90%'],
         center: ['50%', '55%'],
         sort: 'desc',
-        data: [{"name":"教程","value":2,"path":"categories/教程/","id":"cuidgjruBYKV-PbYkuzCRTmkA","parentId":"0"},{"name":"前端","value":1,"path":"categories/前端/","id":"cuidYnLx5Et-FLx8IS9TQRfGw","parentId":"0"},{"name":"游戏","value":1,"path":"categories/游戏/","id":"cuidxauRDoQ9NNPRev8ImnWg5","parentId":"0"}],
+        data: [{"name":"教程","value":2,"path":"categories/教程/","id":"cuidWwOVj2O9yPJ8wgeD9jaHL","parentId":"0"},{"name":"前端","value":1,"path":"categories/前端/","id":"cuid0IuI8majkKL0KeA3yFrwi","parentId":"0"},{"name":"游戏","value":1,"path":"categories/游戏/","id":"cuidSavNLS0J9fBsb9NoVa8FQ","parentId":"0"}],
         itemStyle: {
           borderColor: '#fff',
           borderWidth: 2,
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', function () {
           color: color,
           formatter: '{b} : {c} ({d}%)'
         },
-        data: [{"name":"教程","value":2,"path":"categories/教程/","id":"cuidgjruBYKV-PbYkuzCRTmkA","parentId":"0"},{"name":"前端","value":1,"path":"categories/前端/","id":"cuidYnLx5Et-FLx8IS9TQRfGw","parentId":"0"},{"name":"游戏","value":1,"path":"categories/游戏/","id":"cuidxauRDoQ9NNPRev8ImnWg5","parentId":"0"}],
+        data: [{"name":"教程","value":2,"path":"categories/教程/","id":"cuidWwOVj2O9yPJ8wgeD9jaHL","parentId":"0"},{"name":"前端","value":1,"path":"categories/前端/","id":"cuid0IuI8majkKL0KeA3yFrwi","parentId":"0"},{"name":"游戏","value":1,"path":"categories/游戏/","id":"cuidSavNLS0J9fBsb9NoVa8FQ","parentId":"0"}],
         itemStyle: {
           emphasis: {
             shadowBlur: 10,
@@ -748,7 +748,7 @@ queueMicrotask(() => {
     if (typeof twikoo === 'object') {
       runTwikoo()
     } else {
-      getScript('https://s4.zstatic.net/ajax/libs/twikoo/1.6.41/twikoo.all.min.js').then(runTwikoo)
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js').then(runTwikoo)
     }
   }
 
