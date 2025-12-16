@@ -1,5 +1,5 @@
 window.IP_CONFIG = {
-	API_KEY: 'd9dl7H3NzOwR0hO7Pz3PtyB2W5', // API密钥 申请地址：https://api.76.al/
+	API_KEY: '51f34eb7cc65b65a', // API密钥 申请地址：https://api.nsmao.net/
 	BLOG_LOCATION: {
 		lng: 110.722, // 经度
 		lat: 19.5629 // 纬度
@@ -25,7 +25,7 @@ const insertAnnouncementComponent = () => {
 const getWelcomeInfoElement = () => document.querySelector('#welcome-info');
 
 const fetchIpData = async () => {
-	const response = await fetch(`https://api.nsmao.net/api/ipip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
+	const response = await fetch(`https://v1.nsuuu.com/api/ipip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
 	if (!response.ok) throw new Error('网络响应不正常');
 	return await response.json();
 };
