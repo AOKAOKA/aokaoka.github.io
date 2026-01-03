@@ -25,7 +25,7 @@ const insertAnnouncementComponent = () => {
 const getWelcomeInfoElement = () => document.querySelector('#welcome-info');
 
 const fetchIpData = async () => {
-	const response = await fetch(`https://api.nsmao.net/api/lnglat/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
+	const response = await fetch(`https://api.nsmao.net/api/ipip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
 	if (!response.ok) throw new Error('网络响应不正常');
 	return await response.json();
 };
@@ -350,4 +350,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	insertAnnouncementComponent();
 	document.addEventListener('pjax:complete', insertAnnouncementComponent);
 });
+
 
