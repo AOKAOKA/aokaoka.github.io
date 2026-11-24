@@ -24,10 +24,70 @@ const insertAnnouncementComponent = () => {
 
 const getWelcomeInfoElement = () => document.querySelector('#welcome-info');
 
+// 请求超时包装：超时不等于请求失败被取消，仅不再等待其结果
+const withTimeout = (promise, ms, label) =>
+	Promise.race([
+		promise,
+		new Promise((_, reject) => setTimeout(() => reject(new Error(label + ' 请求超时')), ms))
+	]);
+
+// 逐个尝试的 IP 查询接口，全部返回 {ip, data:{lng,lat,country,prov,city}}
+// 1. nsmao（原接口，中文数据；key 失效或服务恢复前会先失败再降级）
+// 2. ipapi.co（免 key，英文地名 + 经纬度，CORS 按来源放行）
+// 3. api.ip.sb（免 key，英文地名 + 经纬度，CORS 全放行）
+const IP_PROVIDERS = [
+	async () => {
+		const r = await fetch(`https://api.nsmao.net/api/ipip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
+		if (!r.ok) throw new Error('nsmao 网络响应不正常');
+		const j = await r.json();
+		if (!j || !j.data || j.data.lng == null) throw new Error('nsmao 数据缺失');
+		return j;
+	},
+	async () => {
+		const r = await fetch('https://ipapi.co/json/');
+		if (!r.ok) throw new Error('ipapi.co 响应异常');
+		const j = await r.json();
+		if (j.error || !j.ip) throw new Error(j.reason || 'ipapi.co 数据缺失');
+		return {
+			ip: j.ip,
+			data: {
+				lng: j.longitude,
+				lat: j.latitude,
+				country: j.country_name || '',
+				prov: j.region || '',
+				city: j.city || ''
+			}
+		};
+	},
+	async () => {
+		const r = await fetch('https://api.ip.sb/geoip');
+		if (!r.ok) throw new Error('ip.sb 响应异常');
+		const j = await r.json();
+		if (!j.ip) throw new Error('ip.sb 数据缺失');
+		return {
+			ip: j.ip,
+			data: {
+				lng: j.longitude,
+				lat: j.latitude,
+				country: j.country || '',
+				prov: j.region || '',
+				city: j.city || ''
+			}
+		};
+	}
+];
+
 const fetchIpData = async () => {
-	const response = await fetch(`https://api.nsmao.net/api/ipip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
-	if (!response.ok) throw new Error('网络响应不正常');
-	return await response.json();
+	let lastError;
+	for (const provider of IP_PROVIDERS) {
+		try {
+			return await withTimeout(provider(), 8000, 'IP接口');
+		} catch (error) {
+			lastError = error;
+			console.warn('[card-welcome] IP接口失败，尝试下一个:', error && error.message);
+		}
+	}
+	throw lastError || new Error('所有IP接口均不可用');
 };
 
 const showWelcome = ({
@@ -46,8 +106,9 @@ const showWelcome = ({
 	const welcomeInfo = getWelcomeInfoElement();
 	if (!welcomeInfo) return;
 
-	const dist = calculateDistance(lng, lat);
-	const ipDisplay = formatIpDisplay(ip);
+	const hasCoord = lng != null && lat != null;
+	const dist = hasCoord ? calculateDistance(lng, lat) : null;
+	const ipDisplay = ip ? formatIpDisplay(ip) : '未知';
 	const pos = formatLocation(country, prov, city);
 
 	welcomeInfo.style.display = 'block';
@@ -66,14 +127,14 @@ const calculateDistance = (lng, lat) => {
 
 	return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
 };
-const formatIpDisplay = (ip) => ip.includes(":") ? "<br>好复杂，咱看不懂~(ipv6)" : ip;
+const formatIpDisplay = (ip) => ip && ip.includes(":") ? "<br>好复杂，咱看不懂~(ipv6)" : ip;
 const formatLocation = (country, prov, city) => {
 	return country ? (country === "中国" ? `${prov} ${city}` : country) : '神秘地区';
 };
 
 const generateWelcomeMessage = (pos, dist, ipDisplay, country, prov, city) => `
     欢迎来自 <b>${pos}</b> 的小友💖<br>
-    你当前距博主约 <b>${dist}</b> 公里！<br>
+    ${dist != null ? `你当前距博主约 <b>${dist}</b> 公里！<br>` : ''}
     你的IP地址：<b class="ip-address">${ipDisplay}</b><br>
     ${getTimeGreeting()}<br>
     Tip：<b>${getGreeting(country, prov, city)}🍂</b>
