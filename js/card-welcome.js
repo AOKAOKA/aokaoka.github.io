@@ -31,6 +31,26 @@ const withTimeout = (promise, ms, label) =>
 		new Promise((_, reject) => setTimeout(() => reject(new Error(label + ' 请求超时')), ms))
 	]);
 
+// 常见国家英文名 → 中文（免 key 接口返回英文地名；未收录的按原文显示）
+const COUNTRY_CN = {
+	"China": "中国",
+	"United States": "美国",
+	"Japan": "日本",
+	"South Korea": "韩国",
+	"North Korea": "朝鲜",
+	"Russia": "俄罗斯",
+	"France": "法国",
+	"Germany": "德国",
+	"Australia": "澳大利亚",
+	"Canada": "加拿大",
+	"Singapore": "新加坡",
+	"United Kingdom": "英国",
+	"Hong Kong": "中国香港",
+	"Taiwan": "中国台湾",
+	"Macao": "中国澳门"
+};
+const toCnCountry = (c) => (c && COUNTRY_CN[c]) || c;
+
 // 逐个尝试的 IP 查询接口，全部返回 {ip, data:{lng,lat,country,prov,city}}
 // 1. nsmao（原接口，中文数据；key 失效或服务恢复前会先失败再降级）
 // 2. ipapi.co（免 key，英文地名 + 经纬度，CORS 按来源放行）
@@ -53,7 +73,7 @@ const IP_PROVIDERS = [
 			data: {
 				lng: j.longitude,
 				lat: j.latitude,
-				country: j.country_name || '',
+				country: toCnCountry(j.country_name || ''),
 				prov: j.region || '',
 				city: j.city || ''
 			}
@@ -69,7 +89,7 @@ const IP_PROVIDERS = [
 			data: {
 				lng: j.longitude,
 				lat: j.latitude,
-				country: j.country || '',
+				country: toCnCountry(j.country || ''),
 				prov: j.region || '',
 				city: j.city || ''
 			}
