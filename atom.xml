@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, AOKAOKA</rights>
   <subtitle>不经一事，不长一智</subtitle>
   <title>奥梁小栈</title>
-  <updated>2026-11-24T19:25:48.100Z</updated>
+  <updated>2026-11-24T19:40:39.959Z</updated>
   <entry>
     <author>
       <name>AOKAOKA</name>
@@ -19,7 +19,7 @@
     <category term="cloudflare" scheme="https://blog.aokaoka.top/tags/cloudflare/"/>
     <category term="CDN" scheme="https://blog.aokaoka.top/tags/CDN/"/>
     <content>
-      <![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文将介绍利用Cloudflare Worker部署CDN路由页。搭建中使用Cloudflare的Worker服务，每天有10万个免费请求次数，对于个人使用来说完全不用担心。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://github.com/AOKAOKA/CDN/blob/main/worker.js">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">GitHub仓库</div>            <div class="tag-link-sitename">worker.js</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><p>前提条件：</p><ul><li>一个域名</li><li>一个 Cloudflare 账号</li></ul><h1 id="创建Cloudflare-Workers"><a href="#创建Cloudflare-Workers" class="headerlink" title="创建Cloudflare Workers"></a>创建Cloudflare Workers</h1><ol><li>登录 Cloudflare 账户，点击 Workers 选项。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/823160.png" alt="Cloudflare.png"></li><li>创建 Worker<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/367389.png" alt="Cloudflare.png"></li></ol><ul><li>Worker 名称随意，填好后点击 <strong>部署</strong></li><li>编辑 Worker 脚本，粘贴复制的脚本内容<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/372822.png" alt="cdn.png"></li><li>然后依次修改第<strong>20</strong>行,<strong>116</strong>行,<strong>126</strong>行,<strong>132</strong>行,修改为自己想要的背景和头像之类的。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/469791.png" alt="cdn.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/140798.png" alt="cdn.png"></li></ul><h1 id="设置自定义域名"><a href="#设置自定义域名" class="headerlink" title="设置自定义域名"></a>设置自定义域名</h1><ol><li>依次点击 <strong>Workers</strong> 和 <strong>Pages</strong> → <strong>tunnel</strong> → <strong>设置</strong> → <strong>触发器</strong> → <strong>添加自定义域</strong>，输入自定义域名进行绑定。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/140280.png" alt="Cloudflare.png"></li><li>新建网页输入绑定好的域名检查是否正常。</li></ol>]]>
+      <![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文将介绍利用Cloudflare Worker部署CDN路由页。搭建中使用Cloudflare的Worker服务，每天有10万个免费请求次数，对于个人使用来说完全不用担心。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://github.com/AOKAOKA/CDN/blob/main/worker.js">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">GitHub仓库</div>            <div class="tag-link-sitename">worker.js</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><p>前提条件：</p><ul><li>一个域名</li><li>一个 Cloudflare 账号</li></ul><h1 id="创建Cloudflare-Workers"><a href="#创建Cloudflare-Workers" class="headerlink" title="创建Cloudflare Workers"></a>创建Cloudflare Workers</h1><ol><li>登录 Cloudflare 账户，点击 Workers 选项。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/291695.png" alt="Cloudflare.png"></li><li>创建 Worker<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/953778.png" alt="Cloudflare.png"></li></ol><ul><li>Worker 名称随意，填好后点击 <strong>部署</strong></li><li>编辑 Worker 脚本，粘贴复制的脚本内容<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/396764.png" alt="cdn.png"></li><li>然后依次修改第<strong>20</strong>行,<strong>116</strong>行,<strong>126</strong>行,<strong>132</strong>行,修改为自己想要的背景和头像之类的。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/500284.png" alt="cdn.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/967524.png" alt="cdn.png"></li></ul><h1 id="设置自定义域名"><a href="#设置自定义域名" class="headerlink" title="设置自定义域名"></a>设置自定义域名</h1><ol><li>依次点击 <strong>Workers</strong> 和 <strong>Pages</strong> → <strong>tunnel</strong> → <strong>设置</strong> → <strong>触发器</strong> → <strong>添加自定义域</strong>，输入自定义域名进行绑定。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/393757.png" alt="Cloudflare.png"></li><li>新建网页输入绑定好的域名检查是否正常。</li></ol>]]>
     </content>
     <id>https://blog.aokaoka.top/posts/de2a4172.html</id>
     <link href="https://blog.aokaoka.top/posts/de2a4172.html"/>
@@ -28,7 +28,7 @@
       <![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文将介绍利用Cloudflare Worker部署CDN路由页。搭建中使用Cloudflare的Worker服务，每天有10万个免费请求次]]>
     </summary>
     <title>使用 Cloudflare Workers 部署CDN路由页</title>
-    <updated>2026-11-24T19:25:48.100Z</updated>
+    <updated>2026-11-24T19:40:39.959Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,7 +48,7 @@
 <figure class="highlight markdown"><table><tr>]]>
     </summary>
     <title>页面模板</title>
-    <updated>2026-11-24T19:25:48.100Z</updated>
+    <updated>2026-11-24T19:40:39.959Z</updated>
   </entry>
   <entry>
     <author>
@@ -70,7 +70,7 @@
 <li>标记：标签，带尖括号的文本&lt;&gt]]>
     </summary>
     <title>前端编写</title>
-    <updated>2026-11-24T19:25:48.100Z</updated>
+    <updated>2026-11-24T19:40:39.959Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,7 +86,7 @@
     <published>2024-10-10T07:55:44.000Z</published>
     <summary>添加大量外挂标签样式。</summary>
     <title>安知鱼主题标签 Tag Plugins</title>
-    <updated>2026-11-24T19:25:48.100Z</updated>
+    <updated>2026-11-24T19:40:39.958Z</updated>
   </entry>
   <entry>
     <author>
@@ -96,7 +96,7 @@
     <category term="我的世界" scheme="https://blog.aokaoka.top/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/"/>
     <category term="服务器" scheme="https://blog.aokaoka.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <content>
-      <![CDATA[<h4 id="—-🚀️服务器介绍——"><a href="#—-🚀️服务器介绍——" class="headerlink" title="—-🚀️服务器介绍——"></a>—-🚀️服务器介绍——</h4><p>这里，生电玩法激发红石创意！</p><p>非商业化运作，只为热爱！</p><p>休闲氛围，让你轻松游戏无压力！</p><p>双版本互通，打破限制，与伙伴畅玩mc！</p><p>玩家活跃，热闹非凡，一起创造精彩回忆。</p><p><a href="https://qm.qq.com/q/3WWJDEbTn2" title="笙竹小镇">点击加入我们！</a>QQ群:710684566</p><h5 id="——-🎉️玩家建筑——–"><a href="#——-🎉️玩家建筑——–" class="headerlink" title="——-🎉️玩家建筑——–"></a>——-🎉️玩家建筑——–</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/253531.png" alt="玩家建筑"></p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/089194.png" alt="mc.png"></p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.aokaoka.top/i/2026/06/27/428785.png" alt="mc.png"></p>]]>
+      <![CDATA[<h4 id="—-🚀️服务器介绍——"><a href="#—-🚀️服务器介绍——" class="headerlink" title="—-🚀️服务器介绍——"></a>—-🚀️服务器介绍——</h4><p>这里，生电玩法激发红石创意！</p><p>非商业化运作，只为热爱！</p><p>休闲氛围，让你轻松游戏无压力！</p><p>双版本互通，打破限制，与伙伴畅玩mc！</p><p>玩家活跃，热闹非凡，一起创造精彩回忆。</p><p><a href="https://qm.qq.com/q/3WWJDEbTn2" title="笙竹小镇">点击加入我们！</a>QQ群:710684566</p><h5 id="——-🎉️玩家建筑——–"><a href="#——-🎉️玩家建筑——–" class="headerlink" title="——-🎉️玩家建筑——–"></a>——-🎉️玩家建筑——–</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/104984.png" alt="玩家建筑"></p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/110505.png" alt="mc.png"></p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://r2.aokaoka.top/i/2026/11/24/817521.png" alt="mc.png"></p>]]>
     </content>
     <id>https://blog.aokaoka.top/posts/7bcddba4.html</id>
     <link href="https://blog.aokaoka.top/posts/7bcddba4.html"/>
@@ -106,6 +106,6 @@
 <p>非商业化运作，只]]>
     </summary>
     <title>笙竹小镇[mc互通服]</title>
-    <updated>2026-11-24T19:25:48.100Z</updated>
+    <updated>2026-11-24T19:40:39.959Z</updated>
   </entry>
 </feed>
