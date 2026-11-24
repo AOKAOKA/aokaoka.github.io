@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, AOKAOKA</rights>
   <subtitle>不经一事，不长一智</subtitle>
   <title>奥梁小栈</title>
-  <updated>2026-11-24T18:43:18.741Z</updated>
+  <updated>2026-11-24T18:51:29.486Z</updated>
   <entry>
     <author>
       <name>AOKAOKA</name>
@@ -28,7 +28,7 @@
       <![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文将介绍利用Cloudflare Worker部署CDN路由页。搭建中使用Cloudflare的Worker服务，每天有10万个免费请求次]]>
     </summary>
     <title>使用 Cloudflare Workers 部署CDN路由页</title>
-    <updated>2026-11-24T18:43:18.741Z</updated>
+    <updated>2026-11-24T18:51:29.486Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,7 +48,7 @@
 <figure class="highlight markdown"><table><tr>]]>
     </summary>
     <title>页面模板</title>
-    <updated>2026-11-24T18:43:18.741Z</updated>
+    <updated>2026-11-24T18:51:29.486Z</updated>
   </entry>
   <entry>
     <author>
@@ -70,7 +70,7 @@
 <li>标记：标签，带尖括号的文本&lt;&gt]]>
     </summary>
     <title>前端编写</title>
-    <updated>2026-11-24T18:43:18.741Z</updated>
+    <updated>2026-11-24T18:51:29.486Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,7 +86,7 @@
     <published>2024-10-10T07:55:44.000Z</published>
     <summary>添加大量外挂标签样式。</summary>
     <title>安知鱼主题标签 Tag Plugins</title>
-    <updated>2026-11-24T18:43:18.740Z</updated>
+    <updated>2026-11-24T18:51:29.485Z</updated>
   </entry>
   <entry>
     <author>
@@ -106,6 +106,6 @@
 <p>非商业化运作，只]]>
     </summary>
     <title>笙竹小镇[mc互通服]</title>
-    <updated>2026-11-24T18:43:18.741Z</updated>
+    <updated>2026-11-24T18:51:29.486Z</updated>
   </entry>
 </feed>
