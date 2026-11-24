@@ -61,15 +61,15 @@
     light: {
 	  smallSrc: '/img/首页.png', //浅色模式 小图链接 尽可能配置小于100k的图片 
 	  largeSrc: '/img/首页.png', //浅色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: '/img/手机端壁纸.png', //手机端浅色小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: '/img/手机端壁纸.png', //手机端浅色大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://img.aokaoka.top/i/2026/06/27/539578.png', //手机端浅色小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://img.aokaoka.top/i/2026/06/27/539578.png', //手机端浅色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	dark: {
-	  smallSrc: '/img/PC端深色壁纸.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
-	  largeSrc: '/img/PC端深色壁纸.jpg', //深色模式 大图链接 最终显示的图片
-	  mobileSmallSrc: '/img/手机端深色壁纸.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
-	  mobileLargeSrc: '/img/手机端深色壁纸.jpg', //手机端深色大图链接 最终显示的图片
+	  smallSrc: 'https://img.aokaoka.top/i/2026/06/27/955056.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
+	  largeSrc: 'https://img.aokaoka.top/i/2026/06/27/955056.jpg', //深色模式 大图链接 最终显示的图片
+	  mobileSmallSrc: 'https://img.aokaoka.top/i/2026/06/27/408922.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
+	  mobileLargeSrc: 'https://img.aokaoka.top/i/2026/06/27/408922.jpg', //手机端深色大图链接 最终显示的图片
 	  enableRoutes: ['/'],
 	  },
 	};
