@@ -1,6 +1,21 @@
 const CountdownTimer = (() => {
+    // 春节日期（公历），覆盖到 2038 年；每年自动取下一个未到的春节
+    const SPRING_FESTIVALS = [
+        [2024, 2, 10], [2025, 1, 29], [2026, 2, 17], [2027, 2, 6],
+        [2028, 1, 26], [2029, 2, 13], [2030, 2, 3], [2031, 1, 23],
+        [2032, 2, 11], [2033, 1, 31], [2034, 2, 19], [2035, 2, 8],
+        [2036, 1, 28], [2037, 2, 15], [2038, 2, 4]
+    ];
+
+    function nextSpringFestival(today) {
+        for (const [y, m, d] of SPRING_FESTIVALS) {
+            const date = new Date(y, m - 1, d);
+            if (date >= today) return date;
+        }
+        return new Date(today.getFullYear() + 1, 1, 6);
+    }
+
     const config = {
-        targetDate: "2026-02-17",
         targetName: "春节",
         units: {
             day: { text: "今日", unit: "小时" },
@@ -55,11 +70,13 @@ const CountdownTimer = (() => {
         
         const [eventName, eventDate, daysUntil, countRight] = elements;
         const now = new Date();
-        const target = new Date(config.targetDate);
-        
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const target = nextSpringFestival(today);
+        const targetDate = `${target.getFullYear()}-${String(target.getMonth() + 1).padStart(2, "0")}-${String(target.getDate()).padStart(2, "0")}`;
+
         eventName.textContent = config.targetName;
-        eventDate.textContent = config.targetDate;
-        daysUntil.textContent = Math.round((target - now.setHours(0,0,0,0)) / 86400000);
+        eventDate.textContent = targetDate;
+        daysUntil.textContent = Math.round((target - today) / 86400000);
         
         countRight.innerHTML = Object.entries(config.units)
             .map(([key, {text, unit}]) => {
