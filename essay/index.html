@@ -60,7 +60,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2026-11-28 06:42:45',
+  postUpdate: '2026-11-28 07:12:47',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -428,7 +428,7 @@ queueMicrotask(() => {
 
   const loadTwikoo = () => {
     if (typeof twikoo === 'object') setTimeout(runFn,0)
-    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js').then(runFn)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@2.0.17/dist/twikoo.min.js').then(runFn)
   }
 
   const getCount = () => {
@@ -503,7 +503,7 @@ queueMicrotask(() => {
     if (typeof twikoo === 'object') {
       runTwikoo()
     } else {
-      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js').then(runTwikoo)
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@2.0.17/dist/twikoo.min.js').then(runTwikoo)
     }
   }
 

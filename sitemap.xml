@@ -11,42 +11,6 @@
   </url>
   
   <url>
-    <loc>https://blog.aokaoka.top/essay/index.html</loc>
-    
-    <lastmod>2026-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aokaoka.top/fcircle/index.html</loc>
-    
-    <lastmod>2026-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aokaoka.top/games/index.html</loc>
-    
-    <lastmod>2026-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aokaoka.top/js/Twikoo.json</loc>
-    
-    <lastmod>2026-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.aokaoka.top/json/music.json</loc>
     
     <lastmod>2026-11-28</lastmod>
@@ -165,6 +129,42 @@
   
   <url>
     <loc>https://blog.aokaoka.top/copyright/index.html</loc>
+    
+    <lastmod>2026-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.aokaoka.top/essay/index.html</loc>
+    
+    <lastmod>2026-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.aokaoka.top/fcircle/index.html</loc>
+    
+    <lastmod>2026-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.aokaoka.top/games/index.html</loc>
+    
+    <lastmod>2026-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.aokaoka.top/js/Twikoo.json</loc>
     
     <lastmod>2026-11-28</lastmod>
     
